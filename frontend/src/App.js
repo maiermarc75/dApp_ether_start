@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import contacts_abi from './ABI/Contacts.json'
 // const data = require('../ABI/Contacts.json');
 
-const CONTACT_ADDRESS = '0x230dFE49ed5D13Df1AcE2E7F6AB45e01060492C5'
+const CONTACT_ADDRESS = '0x8E32e1908D060fC149D22ce2b5027E4aE28c6393'
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       // await window.ethereum.enable();
       
       const Contact =new web3.eth.Contract(contacts_abi.abi, CONTACT_ADDRESS);
-      Contact.methods.getName().call().then((result) => {
+      Contact.methods.getUsersCount().call().then((result) => {
         console.log(result)
       })
     }
